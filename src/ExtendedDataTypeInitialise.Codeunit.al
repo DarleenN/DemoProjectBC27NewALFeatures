@@ -2,6 +2,8 @@ codeunit 50100 InitExtendedDatatypeDemo
 {
     Subtype = Normal;
 
+    //This Codeunit is only used to fill the demo page with Data
+
     trigger OnRun()
     var
         demoRec: Record ExtendedDatatypeDemo;

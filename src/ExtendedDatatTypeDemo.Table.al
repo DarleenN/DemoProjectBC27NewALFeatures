@@ -8,30 +8,35 @@ table 50100 ExtendedDatatypeDemo
         {
             Caption = 'None';
             ExtendedDatatype = None;
+
         }
 
         field(2; Phone; Text[30])
         {
             Caption = 'Phone Number';
             ExtendedDatatype = PhoneNo;
+
         }
 
         field(3; WebLink; Text[250])
         {
             Caption = 'URL';
             ExtendedDatatype = URL;
+
         }
 
         field(4; Mail; Text[100])
         {
             Caption = 'Email';
             ExtendedDatatype = EMail;
+
         }
 
         field(5; Progress; Decimal)
         {
             Caption = 'Ratio';
             ExtendedDatatype = Ratio;
+
         }
 
         field(6; Secret; Text[50])
@@ -40,6 +45,7 @@ table 50100 ExtendedDatatypeDemo
             //ExtendedDatatype = Masked;
             //Alternatively new MaskType Property to be able to unconceal on userinterface however the data is still transported to the client, therefore only secure on the UI Layer
             MaskType = Concealed;
+            // BC27_NEU
         }
 
         field(7; PersonPicture; Media)
@@ -52,6 +58,7 @@ table 50100 ExtendedDatatypeDemo
         {
             Caption = 'Barcode';
             ExtendedDatatype = Barcode;
+            Description = 'Not supported for WebClient';
         }
         field(9; RichText; Text[2048])
         {
@@ -62,26 +69,39 @@ table 50100 ExtendedDatatypeDemo
         {
             Caption = 'Document';
             ExtendedDatatype = Document;
+            // BC27_NEU
         }
         field(11; CustomizationOption1; Text[100])
         {
             Caption = 'Always';
-            AllowInCustomizations = Always;
+            AllowInCustomizations = ToBeClassified;
+            // BC27_NEU
+
         }
         field(12; CustomizationOption2; Text[100])
         {
             Caption = 'AsReadOnly';
             AllowInCustomizations = AsReadOnly;
+            // BC27_NEU
+
         }
         field(13; CustomizationOption3; Text[100])
         {
             Caption = 'AsReadWrite';
             AllowInCustomizations = AsReadWrite;
+            // BC27_NEU
+
         }
         field(14; CustomizationOption4; Text[100])
         {
             Caption = 'Never';
             AllowInCustomizations = Never;
+        }
+        field(15; CustomizationOption5; Text[100])
+        {
+            Caption = 'Always';
+            AllowInCustomizations = Always;
+            // BC27_Deprecated in 16.0
         }
     }
 
@@ -96,6 +116,7 @@ table 50100 ExtendedDatatypeDemo
     end;
 
     [Obsolete('I''m old! Please don''t use me!')]
+    // BC27_NEU
     procedure ObsoleteGetRichText(): Text
     begin
         //Doing some old stuff

@@ -42,6 +42,7 @@ page 50100 ExtendedDatatypeDemoCard
                 field(Secret; Rec.Secret)
                 {
                     ToolTip = 'Displays the value as dots when defined with ExtendedDatatype = Masked. This will only have effect on fields, where the user can enter and display textual data (including numbers, time, date etc.). When defined with MaskType = Concealed a lightweight UI-layer-only information protection is provided, as the unmasked data is transferred to the web browser anyway.', Comment = '%';
+                    // BC27_NEU
                 }
                 field(WebLink; Rec.WebLink)
                 {
@@ -66,6 +67,7 @@ page 50100 ExtendedDatatypeDemoCard
                     }
                 }
                 part(ExtendedDataTypeDocumentDemo; ExtendedDataTypeDocumentDemo)
+                // BC27_NEU
                 {
                     Caption = 'Document';
                 }
@@ -74,30 +76,24 @@ page 50100 ExtendedDatatypeDemoCard
                     Caption = 'Customization Test';
                     Description = 'Add customizations via personalize here to see how they react';
 
-                    field(CustomizationOption1; Rec.CustomizationOption1)
-                    {
-                        ToolTip = 'Specifies the value of the Allways field.', Comment = '%';
-                        Enabled = false;
-                        Visible = false;
-                    }
-                    field(CustomizationOption2; Rec.CustomizationOption2)
-                    {
-                        ToolTip = 'Specifies the value of the AsReadOnly field.', Comment = '%';
-                        Enabled = false;
-                        Visible = false;
-                    }
-                    field(CustomizationOption3; Rec.CustomizationOption3)
-                    {
-                        ToolTip = 'Specifies the value of the AsReadWrite field.', Comment = '%';
-                        Enabled = false;
-                        Visible = false;
-                    }
-                    field(CustomizationOption4; Rec.CustomizationOption4)
-                    {
-                        ToolTip = 'Specifies the value of the Never field.', Comment = '%';
-                        Enabled = false;
-                        Visible = false;
-                    }
+                    // field(CustomizationOption1; Rec.CustomizationOption1)
+                    // {
+                    //     ToolTip = 'Specifies the value of the Allways field.', Comment = '%';
+                    // }
+                    // field(CustomizationOption2; Rec.CustomizationOption2)
+                    // {
+                    //     ToolTip = 'Specifies the value of the AsReadOnly field.', Comment = '%';
+                    // }
+                    // field(CustomizationOption3; Rec.CustomizationOption3)
+                    // {
+                    //     ToolTip = 'Specifies the value of the AsReadWrite field.', Comment = '%';
+                    // }
+                    // field(CustomizationOption4; Rec.CustomizationOption4)
+                    // {
+                    //     ToolTip = 'Specifies the value of the Never field.', Comment = '%';
+                    //     Enabled = false;
+                    //     Visible = false;
+                    // }
                 }
             }
         }
@@ -112,17 +108,20 @@ page 50100 ExtendedDatatypeDemoCard
     trigger OnOpenPage()
     var
         ExtendedDataTypeDemoFill: Codeunit InitExtendedDatatypeDemo;
+    // BC27_NEU
     begin
         if not Rec.IsEmpty() then
             exit;
 
         ExtendedDataTypeDemoFill.Run();
+        // BC27_NEU
     end;
 
     trigger OnAfterGetCurrRecord()
     begin
 #if Legacy //defined on top of this Page just uncomment the define
         RichText := Rec.ObsoleteGetRichText();
+        // BC27_NEU
 #else
         RichText := Rec.GetRichText();
 #endif

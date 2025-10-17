@@ -11,6 +11,7 @@ page 50101 ExtendedDataTypeDocumentDemo
         {
             group(GroupName)
             {
+                // BC27_NEU
                 field(Document; Rec.Document)
                 {
 
