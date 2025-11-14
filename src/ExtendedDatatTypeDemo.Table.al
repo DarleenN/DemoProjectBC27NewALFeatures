@@ -8,35 +8,30 @@ table 50100 ExtendedDatatypeDemo
         {
             Caption = 'None';
             ExtendedDatatype = None;
-
         }
 
         field(2; Phone; Text[30])
         {
             Caption = 'Phone Number';
             ExtendedDatatype = PhoneNo;
-
         }
 
         field(3; WebLink; Text[250])
         {
             Caption = 'URL';
             ExtendedDatatype = URL;
-
         }
 
         field(4; Mail; Text[100])
         {
             Caption = 'Email';
             ExtendedDatatype = EMail;
-
         }
 
         field(5; Progress; Decimal)
         {
             Caption = 'Ratio';
             ExtendedDatatype = Ratio;
-
         }
 
         field(6; Secret; Text[50])
@@ -76,21 +71,18 @@ table 50100 ExtendedDatatypeDemo
             Caption = 'Always';
             AllowInCustomizations = ToBeClassified;
             // BC27_NEU
-
         }
         field(12; CustomizationOption2; Text[100])
         {
             Caption = 'AsReadOnly';
             AllowInCustomizations = AsReadOnly;
             // BC27_NEU
-
         }
         field(13; CustomizationOption3; Text[100])
         {
             Caption = 'AsReadWrite';
             AllowInCustomizations = AsReadWrite;
             // BC27_NEU
-
         }
         field(14; CustomizationOption4; Text[100])
         {

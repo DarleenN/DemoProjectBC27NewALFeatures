@@ -117,6 +117,7 @@ page 50100 ExtendedDatatypeDemoCard
         // BC27_NEU
     end;
 
+    #region RichText Stuff
     trigger OnAfterGetCurrRecord()
     begin
 #if Legacy //defined on top of this Page just uncomment the define
@@ -129,4 +130,5 @@ page 50100 ExtendedDatatypeDemoCard
 
     var
         RichText: Text;
+    #endregion RichText Stuff
 }

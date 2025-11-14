@@ -78,7 +78,6 @@ report 50101 "Demo Report Empty DataItems"
     [Obsolete('I''m obsolete', 'why')]
     // BC27_NEU
     local procedure ObsoleteEventPublisher()
-
     begin
     end;
 
@@ -86,7 +85,6 @@ report 50101 "Demo Report Empty DataItems"
     [Obsolete('I''m obsolete', 'why')]
     // BC27_NEU
     local procedure ObsoleteBusinessEvent()
-
     begin
     end;
 }
